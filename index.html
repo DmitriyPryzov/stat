@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input {
+            width: 500px;
+            height: 100px;
+            font-size: 30px; 
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="words">
+    <input type="text" class="res">
+
+    <script>
+
+        const  input = document.querySelector(".words");
+        const res = document.querySelector(".res");
+
+        const rules = {
+            "A": "Ф",
+            "B": "І",
+            "C": "С",
+            "D": "В",
+            "E": "У",
+            "F": "А",
+            "G": "П",
+            "H": "Р",
+            "I": "Ш",
+            "J": "О",
+            "K": "Л",
+            "L": "Д",
+            "M": "Ь",
+            "N": "Т",
+            "O": "Щ",
+            "P": "З",
+            "Q": "Й",
+            "R": "К",
+            "S": "И",
+            "T": "Е",
+            "U": "Г",
+            "V": "М",
+            "W": "Ц",
+            "X": "Ч",
+            "Y": "Н",
+            "Z": "Я"
+        }
+
+        input.addEventListener("input", () => {
+            let resWords = input.value.split("").map(i => i.toUpperCase() in rules ? rules[i.toUpperCase()].toLowerCase() : i);
+
+            res.value = resWords.join("");
+        });
+
+    </script>
+</body>
+</html>
